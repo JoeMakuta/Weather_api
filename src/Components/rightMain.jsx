@@ -11,7 +11,7 @@ export default function rightMain({ set_search_input, search_input, weather_data
    const inputValue = useRef(null)
 
    useEffect(() => {
-      fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${search_input}&limits=5&appid=2c5b563bf97fb0d2b733d6a2a7409cd7&units=metric&cnt=8&lang=en`)
+      fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${search_input}&limits=5&appid=2c5b563bf97fb0d2b733d6a2a7409cd7&units=metric&cnt=8&lang=en`)
          .then((data) => data.json())
          .then((data) => { console.log('The new weather data are : ', weather_data); set_weather_data(data); })
          .catch((error) => console.error(error))
