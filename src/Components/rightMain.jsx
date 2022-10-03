@@ -5,28 +5,16 @@ import { BsSearch } from "react-icons/bs";
 const pre_search_inputs = [
    'Goma', 'Kinshasa', 'Bukavu'
 ]
-
 export default function rightMain({ set_search_input, search_input, weather_data, set_weather_data }) {
 
    const [lat_lon_data, set_lat_lon_data] = useState([])
    const inputValue = useRef(null)
 
    useEffect(() => {
-
-      async () => fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${search_input}&limit=5&appid=2c5b563bf97fb0d2b733d6a2a7409cd7`)
+      fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${search_input}&limits=5&appid=2c5b563bf97fb0d2b733d6a2a7409cd7&units=metric&cnt=8&lang=en`)
          .then((data) => data.json())
-         .then((data) => { set_lat_lon_data(data); console.log('The lat lon data are : ', data[0].lat, data[0].l); })
-
-      fetch_weather_data(lat_lon_data[0] && lat_lon_data[0].lat, lat_lon_data[0] && lat_lon_data[0].lon)
-
+         .then((data) => { console.log('The new weather data are : ', weather_data); set_weather_data(data); })
    }, [search_input])
-
-   const fetch_weather_data = (lat, lon) => {
-      fetch(`http://api.openweathermap.org/data/2.5/forecast?lat=${-1.6665685}&lon=${29.225652}&appid=2c5b563bf97fb0d2b733d6a2a7409cd7&units=metric`)
-         .then((data) => data.json())
-         .then((data) => { set_weather_data(data); console.log('The Really Weather data are : ', data) })
-   }
-
 
    return (
       <div className="w-[35%] h-full bg-black bg-opacity-10 backdrop-blur-sm p-10 ">

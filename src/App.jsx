@@ -3,8 +3,6 @@ import './App.css'
 import LeftMain from './Components/leftMain'
 import RightMain from './Components/rightMain'
 
-
-
 function App() {
   const [search_input, set_search_input] = useState('Goma')
   const [weather_data, set_weather_data] = useState(null)

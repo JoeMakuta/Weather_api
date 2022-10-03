@@ -50,9 +50,11 @@ export default function LeftMain({ set_search_input, search_input, weather_data,
       // weather_data.map((element, index) => {
       //    console.log(element)
       // })
-      console.log('The Weather Data from the left are ', weather_data && weather_data.list[0] && weather_data.list[0].dt_txt)
+      console.log('The Weather Data from the left are ', weather_data)
+
 
    }, [weather_data])
+   const weather_icon = `http://openweathermap.org/img/wn/${weather_data && weather_data.list[0] && weather_data.list[0].weather[0] && weather_data.list[0].weather[0].icon}@2x.png`
 
    return (
       <div className="w-[65%] flex flex-col justify-around h-full bg-black bg-opacity-30 p-20 ">
@@ -61,26 +63,29 @@ export default function LeftMain({ set_search_input, search_input, weather_data,
             <div className="flex flex-col justify-center">
                <h1 className="font-bold text-4xl">{weather_data && weather_data.city && weather_data.city.name}</h1>
                <p>{weather_data && weather_data.list[0] && weather_data.list[0].dt_txt} </p>
+               <p>{weather_data && weather_data.list[0] && weather_data.list[0].weather[0].description} </p>
+
             </div>
             <div className="flex flex-col items-center justify-center ">
                {/* <BsCloudSunFill size={70} color="orange" className=' animate-bounce ' /> */}
-               <img className='  w-40 ' src="http://openweathermap.org/img/wn/10d@2x.png" alt="" />
+               <img className='w-40' src={weather_icon} alt="" />
 
             </div>
 
          </div>
          <div>
             <div className='flex flex-wrap gap-5 scale-100 '>
-               {Weather.map((weather, index) => {
-                  return (
-                     <div key={index} className=' flex flex-col items-center w-20   rounded-lg h-32 '>
-                        <p className='' >{weather.icon}</p>
-                        <p className='text-xl'>{weather.temperature}°</p>
-                        <p className=' text-xs '>{weather.time}:00</p>
-
-                     </div>
-                  )
-
+               {weather_data && weather_data.list.map((weather, index) => {
+                  if (index !== 0) {
+                     const every_weather_icon = `http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`
+                     return (
+                        <div key={index} className=' flex flex-col items-center w-20   rounded-lg h-32 '>
+                           <img className='w-40' src={every_weather_icon} alt="" />
+                           <p className='text-xl'>{weather.main.temp}°</p>
+                           <p className=' text-xs '>{weather.dt_txt}</p>
+                        </div>
+                     )
+                  }
                })}
 
             </div>
