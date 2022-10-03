@@ -59,7 +59,7 @@ export default function rightMain({ set_search_input, search_input, weather_data
                </div>
                <div className="flex justify-between w-full ">
                   <p>Temperature</p>
-                  <p>{weather_data && weather_data.list[0] && weather_data.list[0].main.temp}</p>
+                  <p>{weather_data && weather_data.list[0] && Math.round(weather_data.list[0].main.temp)}°</p>
                </div>
             </div>
          </div>

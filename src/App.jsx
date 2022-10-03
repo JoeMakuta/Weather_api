@@ -8,7 +8,7 @@ function App() {
   const [weather_data, set_weather_data] = useState(null)
 
   return (
-    <div className=' flex flex-wrap text-white font-body1 bg-ThirdMainBack bg-cover h-screen'>
+    <div className=' flex flex-wrap text-white font-body1 bg-MainBack bg-cover h-screen'>
       <LeftMain search_input={search_input} set_search_input={set_search_input} weather_data={weather_data} set_weather_data={set_weather_data} />
       <RightMain search_input={search_input} set_search_input={set_search_input} weather_data={weather_data} set_weather_data={set_weather_data} />
     </div>
