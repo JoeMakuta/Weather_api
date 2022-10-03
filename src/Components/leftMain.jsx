@@ -73,13 +73,13 @@ export default function LeftMain({ set_search_input, search_input, weather_data,
             </div>
 
          </div>
-         <div>
+         <div className=' flex flex-col gap-20 ' >
             <div className='flex flex-wrap gap-5 scale-100 '>
                {weather_data && weather_data.list.map((weather, index) => {
                   if (index !== 0) {
                      const every_weather_icon = `http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`
                      return (
-                        <div key={index} className=' flex flex-col items-center w-20   rounded-lg h-32 '>
+                        <div key={index} className=' flex flex-col items-center text-center w-20 justify-center rounded-lg h-32 '>
                            <img className='w-40' src={every_weather_icon} alt="" />
                            <p className='text-xl'>{weather.main.temp}°</p>
                            <p className=' text-xs '>{weather.dt_txt}</p>

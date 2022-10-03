@@ -14,6 +14,7 @@ export default function rightMain({ set_search_input, search_input, weather_data
       fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${search_input}&limits=5&appid=2c5b563bf97fb0d2b733d6a2a7409cd7&units=metric&cnt=8&lang=en`)
          .then((data) => data.json())
          .then((data) => { console.log('The new weather data are : ', weather_data); set_weather_data(data); })
+         .catch((error) => console.error(error))
    }, [search_input])
 
    return (
@@ -50,15 +51,15 @@ export default function rightMain({ set_search_input, search_input, weather_data
             <div className="w-full text-gray-300 flex gap-4 flex-col">
                <div className="flex justify-between w-full ">
                   <p>Cloudy</p>
-                  <p>60%</p>
+                  <p>{weather_data && weather_data.list[0] && weather_data.list[0].clouds && weather_data.list[0].clouds.all}</p>
                </div>
                <div className="flex justify-between w-full ">
                   <p>Humidity</p>
-                  <p>40%</p>
+                  <p>{weather_data && weather_data.list[0] && weather_data.list[0].main.humidity}</p>
                </div>
                <div className="flex justify-between w-full ">
                   <p>Temperature</p>
-                  <p>0%</p>
+                  <p>{weather_data && weather_data.list[0] && weather_data.list[0].main.temp}</p>
                </div>
             </div>
          </div>
