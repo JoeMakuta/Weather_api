@@ -54,7 +54,7 @@ export default function LeftMain({ set_search_input, search_input, weather_data,
 
 
    }, [weather_data])
-   const weather_icon = `http://openweathermap.org/img/wn/${weather_data && weather_data.list[0] && weather_data.list[0].weather[0] && weather_data.list[0].weather[0].icon}@2x.png`
+   const weather_icon = `http://openweathermap.org/img/wn/${weather_data && weather_data.list[0] && weather_data.list[0].weather[0] && weather_data.list[0].weather[0].icon && '10d'}@2x.png`
 
    return (
       <div className="w-[65%] flex flex-col justify-around h-full bg-black bg-opacity-30 p-20 ">

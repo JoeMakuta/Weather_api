@@ -12,9 +12,9 @@ module.exports = {
 
       },
       backgroundImage: {
-        'MainBack': "url('./src/assets/background1.jpg')",
-        'SubMainBack': "url('./src/assets/background2.jpg')",
-        'ThirdMainBack': "url('./src/assets/background3.jpg')",
+        'MainBack': "url('/src/assets/background1.jpg')",
+        'SubMainBack': "url('/src/assets/background2.jpg')",
+        'ThirdMainBack': "url('/src/assets/background3.jpg')",
       }
     },
 
