@@ -1,18 +1,37 @@
-import { useEffect, useState } from 'react'
-import './App.css'
-import LeftMain from './Components/leftMain'
-import RightMain from './Components/rightMain'
+import { useEffect, useState } from "react";
+import "./App.css";
+import LeftMain from "./Components/leftMain";
+import RightMain from "./Components/rightMain";
 
 function App() {
-  const [search_input, set_search_input] = useState('Goma')
-  const [weather_data, set_weather_data] = useState(null)
+  const [search_input, set_search_input] = useState("Goma");
+  const [weather_data, set_weather_data] = useState();
+  const [loading, set_loading] = useState(true);
 
   return (
-    <div className=' flex flex-wrap text-white font-body1 bg-SubMainBack bg-cover h-screen'>
-      <LeftMain search_input={search_input} set_search_input={set_search_input} weather_data={weather_data} set_weather_data={set_weather_data} />
-      <RightMain search_input={search_input} set_search_input={set_search_input} weather_data={weather_data} set_weather_data={set_weather_data} />
+    <div className=" flex flex-wrap text-white font-body1 bg-SubMainBack bg-cover h-screen">
+      {loading ? (
+        <div className=" flex justify-center items-center w-[65%] bg-black bg-opacity-30">
+          <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin dark:border-violet-400"></div>
+        </div>
+      ) : (
+        <LeftMain
+          search_input={search_input}
+          set_search_input={set_search_input}
+          weather_data={weather_data}
+          set_weather_data={set_weather_data}
+        />
+      )}
+      <RightMain
+        search_input={search_input}
+        set_search_input={set_search_input}
+        weather_data={weather_data}
+        set_weather_data={set_weather_data}
+        loading={loading}
+        set_loading={set_loading}
+      />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

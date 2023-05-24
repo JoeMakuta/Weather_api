@@ -8,9 +8,9 @@ module.exports = {
         body1: ["Poppins"],
       },
       backgroundImage: {
-        MainBack: "url('./src/assets/background1.jpg')",
-        SubMainBack: "url('./src/assets/background2.jpg')",
-        ThirdMainBack: "url('./src/assets/background3.jpg')",
+        MainBack: "url('./assets/background1.jpg')",
+        SubMainBack: "url('./assets/background2.jpg')",
+        ThirdMainBack: "url('./assets/background3.jpg')",
       },
     },
   },
