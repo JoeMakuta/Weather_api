@@ -11,6 +11,8 @@ export default function rightMain({
   set_weather_data,
   loading,
   set_loading,
+  error,
+  setError,
 }) {
   const [lat_lon_data, set_lat_lon_data] = useState([]);
   const inputValue = useRef(null);
@@ -20,11 +22,17 @@ export default function rightMain({
       method: "GET",
       url: `https://api.openweathermap.org/data/2.5/forecast?q=${search_input}&limits=5&appid=2c5b563bf97fb0d2b733d6a2a7409cd7&units=metric&cnt=8&lang=en`,
     };
-    set_loading(true);
-    const data = await axios(options);
-    if (data) {
+
+    try {
+      set_loading(true);
+      const data = await axios(options);
       console.log("The data : ", data.data);
       set_weather_data(data?.data);
+      set_loading(false);
+      setError(false);
+    } catch (error) {
+      console.log("The error : ", error?.message);
+      setError(true);
       set_loading(false);
     }
   };
