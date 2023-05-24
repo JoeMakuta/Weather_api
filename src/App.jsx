@@ -18,7 +18,8 @@ function App() {
         </div>
       ) : error ? (
         <div className=" flex justify-center items-center w-[65%] bg-black bg-opacity-30">
-          <img src="src/assets/no-data-icon-10.png" alt="" />
+          {/* <img src="./src/assets/no-data-icon-10.png" alt="" />  */}
+          Not Data Found !
         </div>
       ) : (
         <LeftMain
