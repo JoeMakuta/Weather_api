@@ -46,8 +46,8 @@ export default function rightMain({
   }, [search_input]);
 
   return (
-    <div className="md:w-[35vw] w-[100vw]  max-h-[100vh] pl-8 bg-black bg-opacity-10 backdrop-blur-sm hidden md:flex flex-col justify-evenly items-start p-4">
-      <div className="flex items-center justify-start  ">
+    <div className="md:w-[35vw] w-[100vw]  max-h-[100vh] pl-8 bg-black bg-opacity-10 backdrop-blur-sm flex absolute md:static flex-col justify-evenly items-start p-4">
+      <div className="flex items-center justify-start top-4  fixed md:static">
         <div>
           <input
             type="text"
@@ -86,8 +86,8 @@ export default function rightMain({
           );
         })}
       </div>
-      <div className="h-[1px] bg-white bg-opacity-50 "></div>
-      <div className="flex flex-col gap-4 items-start ">
+      <div className="h-[1px] bg-white bg-opacity-50 hidden md:block"></div>
+      <div className="md:flex flex-col gap-4 items-start hidden">
         <h1 className="font-bold text-lg ">Weather Details</h1>
         <div className="w-full text-gray-300 flex gap-4 flex-col">
           <div className="flex justify-between w-full ">
