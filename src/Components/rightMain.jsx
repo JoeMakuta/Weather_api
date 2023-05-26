@@ -46,8 +46,8 @@ export default function rightMain({
   }, [search_input]);
 
   return (
-    <div className="w-[35%] h-full bg-black bg-opacity-10 backdrop-blur-sm p-10 ">
-      <div className="flex items-center justify-start pt-6 ">
+    <div className="md:w-[35vw] w-[100vw]  max-h-[100vh] pl-8 bg-black bg-opacity-10 backdrop-blur-sm hidden md:flex flex-col justify-evenly items-start p-4">
+      <div className="flex items-center justify-start  ">
         <div>
           <input
             type="text"
@@ -71,7 +71,7 @@ export default function rightMain({
           <BsSearch size={20} />
         </button>
       </div>
-      <div className="flex flex-col gap-6 items-start pt-10 text-gray-500 ">
+      <div className=" hidden md:flex flex-col gap-8 items-start text-gray-500 ">
         {pre_search_inputs.map((elt, index) => {
           return (
             <button
@@ -86,8 +86,8 @@ export default function rightMain({
           );
         })}
       </div>
-      <div className="h-[1px] bg-white bg-opacity-50 mt-10 "></div>
-      <div className="flex flex-col gap-6 items-start pt-10">
+      <div className="h-[1px] bg-white bg-opacity-50 "></div>
+      <div className="flex flex-col gap-4 items-start ">
         <h1 className="font-bold text-lg ">Weather Details</h1>
         <div className="w-full text-gray-300 flex gap-4 flex-col">
           <div className="flex justify-between w-full ">
@@ -104,7 +104,7 @@ export default function rightMain({
           </div>
         </div>
       </div>
-      <div className="h-[1px] bg-white bg-opacity-50 mt-10 "></div>
+      <div className="h-[1px] bg-white bg-opacity-50 "></div>
     </div>
   );
 }

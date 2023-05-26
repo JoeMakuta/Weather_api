@@ -10,14 +10,14 @@ function App() {
   const [error, setError] = useState(false);
 
   return (
-    <div className=" flex flex-wrap text-white font-body1 bg-SubMainBack bg-cover h-screen">
+    <div className=" flex flex-wrap  md:flex-row max-w-screen max-h-screen h-screen  text-white font-body1  bg-cover bg-SubMainBack ">
       {loading ? (
-        <div className=" flex justify-center items-center w-[65%] bg-black bg-opacity-30">
+        <div className=" flex justify-center items-center w-[100vw] h-screen md:w-[65%] bg-black bg-opacity-30">
           <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin dark:border-violet-400"></div>
           {/* <img src="src/assets/no-data-icon-10.png" alt="" /> */}
         </div>
       ) : error ? (
-        <div className=" flex justify-center items-center w-[65%] bg-black bg-opacity-30">
+        <div className=" flex justify-center items-center w-[65vw] bg-black bg-opacity-30">
           {/* <img src="./src/assets/no-data-icon-10.png" alt="" />  */}
           Not Data Found !
         </div>
