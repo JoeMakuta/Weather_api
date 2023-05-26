@@ -58,7 +58,7 @@ export default function LeftMain({
   }@2x.png`;
 
   return (
-    <div className="md:w-[65vw] w-[100vw] flex flex-col bg-black/30 justify-center  gap-[3%] items-start md:pl-[10%] ">
+    <div className="md:w-[65vw] w-[100vw] flex flex-col bg-black/50 justify-center  gap-[3%] items-start md:pl-[10%] ">
       <div className="flex gap-8 md:gap-8 sm:flex-row flex-col pl-10">
         <h1 className=" text-[5rem] sm:text-[10rem]  transition-all ">
           {" "}

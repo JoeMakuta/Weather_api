@@ -46,7 +46,7 @@ export default function rightMain({
   }, [search_input]);
 
   return (
-    <div className="md:w-[35vw] w-[100vw]  max-h-[100vh] pl-8 bg-black bg-opacity-10 backdrop-blur-sm flex absolute md:static flex-col justify-evenly items-start p-4">
+    <div className="md:w-[35vw] w-[100vw]  max-h-[100vh] pl-8 bg-black bg-opacity-10 backdrop-blur-sm flex absolute md:static flex-col justify-evenly items-start md:p-4">
       <div className="flex items-center justify-start top-4  fixed md:static">
         <div>
           <input
